@@ -1,0 +1,140 @@
+.activity-card__description {
+  margin: 0 0 0.8rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.activity-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.activity-row {
+  display: grid;
+  grid-template-columns: 0.9fr 4fr 1fr;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+}
+
+.activity-row__label {
+  color: var(--color-text-muted);
+}
+
+.activity-row__bar-wrapper {
+  position: relative;
+  height: 0.5rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.06),
+    rgba(15, 23, 42, 0.02)
+  );
+}
+
+.activity-row__goal {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(34, 197, 94, 0.12),
+    rgba(56, 189, 248, 0.12)
+  );
+}
+
+.activity-row__bar {
+  position: relative;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  box-shadow: 0 8px 18px rgba(34, 197, 94, 0.45);
+}
+
+.activity-row__bar--reached {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-yellow),
+    var(--color-primary)
+  );
+  box-shadow: 0 10px 22px rgba(250, 204, 21, 0.55);
+}
+
+.activity-row__value {
+  text-align: end;
+  font-weight: 600;
+}
+
+.activity-row__unit {
+  margin-inline-start: 0.15rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.activity-summary__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.activity-summary__card {
+  border-radius: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  background: radial-gradient(
+    circle at top left,
+    rgba(34, 197, 94, 0.08),
+    transparent 55%
+  );
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.activity-summary__card h3 {
+  margin: 0;
+  font-size: 0.84rem;
+}
+
+.activity-summary__minutes {
+  margin: 0.18rem 0 0.3rem;
+  font-size: 0.8rem;
+}
+
+.activity-summary__meter {
+  height: 0.45rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.06);
+  margin-bottom: 0.3rem;
+}
+
+.activity-summary__meter-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+}
+
+.activity-summary__hint {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .activity-row {
+    grid-template-columns: 1.1fr 3.3fr 1fr;
+  }
+
+  .activity-summary__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+

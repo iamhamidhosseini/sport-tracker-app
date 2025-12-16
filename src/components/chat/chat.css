@@ -1,0 +1,118 @@
+.chat-card__description {
+  margin: 0 0 0.7rem;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 260px;
+  padding: 0.4rem;
+  border-radius: 0.9rem;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 55%);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  overflow-y: auto;
+}
+
+.chat-message {
+  max-width: 92%;
+}
+
+.chat-message__bubble {
+  display: inline-block;
+  padding: 0.4rem 0.55rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  font-size: 0.78rem;
+}
+
+:root[data-theme='light'] .chat-message__bubble {
+  background: #0f172a;
+}
+
+.chat-message--user {
+  align-self: flex-start;
+}
+
+.chat-message--coach,
+.chat-message--system {
+  align-self: flex-end;
+}
+
+.chat-message--coach .chat-message__bubble {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: #022c22;
+}
+
+.chat-message--system .chat-message__bubble {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+.chat-message__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.15rem 0 0.25rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.chat-input {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.4rem;
+}
+
+.chat-input textarea {
+  resize: none;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 0.45rem 0.55rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  background: rgba(15, 23, 42, 0.03);
+  color: var(--color-text);
+}
+
+.chat-input textarea:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 1px;
+}
+
+.chat-input button {
+  align-self: flex-end;
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary),
+    var(--color-accent-yellow)
+  );
+  color: #022c22;
+  box-shadow: 0 9px 25px rgba(56, 189, 248, 0.45);
+}
+
+.chat-input button:focus-visible {
+  outline: 2px solid var(--color-accent-red);
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .chat-window {
+    max-height: 220px;
+  }
+}
+
+
